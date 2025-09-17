@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Melyuca — Mermelada de Yuca</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --sand: #e7d3bb;
+        --brown: #8a5e3b;
+        --green: #6aa84f;
+        --accent: #cfa06b;
+        --bg: #fcfbf9;
+        --card: #ffffff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        background: linear-gradient(180deg, var(--bg) 0%, #fff7f0 100%);
+        color: #333;
+        -webkit-font-smoothing: antialiased;
+      }
+      header {
+        background: linear-gradient(
+          90deg,
+          rgba(250, 245, 240, 0.9),
+          rgba(255, 255, 255, 0.6)
+        );
+        padding: 28px 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border-bottom: 1px solid rgba(138, 94, 59, 0.06);
+      }
+      .logo {
+        width: 110px;
+        height: 110px;
+        flex: 0 0 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 6px 18px rgba(138, 94, 59, 0.08);
+        padding: 10px;
+      }
+      .brand h1 {
+        font-family: "Playfair Display", serif;
+        margin: 0.1rem 0;
+        color: var(--brown);
+        font-size: 1.6rem;
+      }
+      .brand p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--green);
+        font-weight: 600;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 28px auto;
+        padding: 0 20px;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 28px;
+        align-items: stretch;
+        margin-bottom: 28px;
+      }
+      .hero-card {
+        background: var(--card);
+        padding: 28px;
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(138, 94, 59, 0.06);
+      }
+      .hero-card h2 {
+        font-family: "Playfair Display", serif;
+        color: var(--brown);
+        margin-top: 0;
+      }
+      .badge {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
+      .logo-large {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo-large img {
+        max-width: 320px;
+        width: 100%;
+        height: auto;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 18px;
+      }
+      .card {
+        background: var(--card);
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+      }
+      .card h3 {
+        margin: 0 0 8px 0;
+        color: var(--brown);
+        font-size: 1.05rem;
+      }
+      ul {
+        padding-left: 1.1rem;
+      }
+
+      .recipe {
+        display: flex;
+        gap: 18px;
+        margin-top: 18px;
+      }
+      .recipe .left {
+        flex: 1;
+      }
+      .recipe .right {
+        width: 320px;
+      }
+
+      .steps ol {
+        padding-left: 1.2rem;
+      }
+      .tips p {
+        margin: 6px 0;
+      }
+
+      footer {
+        margin: 40px 0 80px 0;
+        text-align: center;
+        color: #666;
+      }
+
+      @media (max-width: 980px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .recipe {
+          flex-direction: column;
+        }
+        .recipe .right {
+          width: 100%;
+        }
+      }
+      @media (max-width: 560px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .logo {
+          width: 88px;
+          height: 88px;
+          flex: 0 0 88px;
+        }
+        .brand h1 {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo" aria-hidden="true">
+        <!-- Logo anclado -->
+        <img
+          src="logo.png"
+          alt="Logo Melyuca"
+          style="max-width: 100%; max-height: 100%; object-fit: contain"
+        />
+      </div>
+      <div class="brand">
+        <h1>Melyuca</h1>
+        <p>La nueva cara de lo natural — Mermelada de yuca</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <article class="hero-card">
+          <span class="badge">Producto artesanal</span>
+          <h2>Mermelada de yuca: dulce, natural y con tradición</h2>
+          <p>
+            La <strong>mermelada de yuca</strong> de Melyuca combina la textura
+            suave de la yuca cocida con miel o azúcar de caña para crear un
+            acompañante versátil: sobre panes, con quesos o como relleno en
+            repostería. Hecha con ingredientes simples y mucho cariño.
+          </p>
+
+          <div class="grid" style="margin-top: 14px">
+            <div class="card">
+              <h3>Presentación</h3>
+              <p>
+                Frascos de 250 g y 500 g, tapa sellada y etiqueta eco-friendly.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Sabor</h3>
+              <p>
+                Suave, ligeramente meloso y con ligero aroma a panela o miel
+                (según la receta).
+              </p>
+            </div>
+            <div class="card">
+              <h3>Usos</h3>
+              <ul>
+                <li>Tostadas y panecillos.</li>
+                <li>Relleno de tartas y alfajores.</li>
+                <li>Combina con quesos frescos y yogur.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <aside class="hero-card logo-large" aria-hidden="true">
+          <img src="vaso.jpg" alt="Logo Melyuca grande" />
+        </aside>
+      </section>
+
+      <section class="card">
+        <h3>Ingredientes</h3>
+        <p>Ingredientes por cada 1 kg de pulpa de yuca:</p>
+        <ul>
+          <li>1 kg de yuca pelada y cocida (pulpa desmenuzada).</li>
+          <li>500–700 g de azúcar o panela (ajustar al gusto).</li>
+          <li>El jugo de 1 limón (para conservar y realzar el sabor).</li>
+          <li>
+            1 rama de canela o 1 cucharadita de esencia de vainilla (opcional).
+          </li>
+          <li>Agua según sea necesario.</li>
+        </ul>
+      </section>
+
+      <section class="card" style="margin-top: 18px">
+        <h3>Historia breve</h3>
+        <p>
+          La yuca (o mandioca) es un tubérculo originario de América tropical y
+          ha formado parte de la gastronomía tradicional durante siglos. La idea
+          de convertirla en mermelada surge de la creatividad popular:
+          aprovechar la pulpa cocida y combinarla con endulzantes locales como
+          la panela o la miel para obtener un producto con larga conservación y
+          gran versatilidad. Melyuca rescata estas técnicas tradicionales con
+          procesos artesanales y un enfoque en ingredientes naturales.
+        </p>
+      </section>
+
+      <section class="recipe card" style="margin-top: 18px">
+        <div class="left">
+          <h3>Receta paso a paso</h3>
+          <div class="steps">
+            <ol>
+              <li>
+                Pelara y cortar la yuca, hervir en agua con una pizca de sal
+                hasta que esté muy blanda (30–40 min).
+              </li>
+              <li>
+                Escurrir y desmenuzar la pulpa. Pesar 1 kg de pulpa resultante.
+              </li>
+              <li>
+                En una olla amplia, mezclar la pulpa con el azúcar o panela y
+                una taza de agua. Añadir la canela si se usa.
+              </li>
+              <li>
+                Cocer a fuego medio-bajo, removiendo frecuentemente para evitar
+                que se pegue, hasta obtener una textura espesa tipo mermelada
+                (30–45 min).
+              </li>
+              <li>
+                Añadir el jugo de limón al final y cocinar 2–3 minutos más.
+                Retirar la canela.
+              </li>
+              <li>
+                Envasar caliente en frascos esterilizados y sellar. Voltear los
+                frascos durante 5 min para crear vacío y dejar enfriar.
+              </li>
+            </ol>
+          </div>
+          <div class="tips" style="margin-top: 12px">
+            <h4 style="margin: 0.2rem 0">Consejos</h4>
+            <p>
+              - Ajusta la cantidad de azúcar a tu gusto; la panela aporta notas
+              caramelizadas.
+            </p>
+            <p>
+              - Para una versión con miel, sustituye hasta la mitad del azúcar
+              por miel y reduce el tiempo de cocción ligeramente.
+            </p>
+            <p>
+              - Guarda en un lugar fresco y seco; una vez abierto, refrigerar y
+              consumir en 3–4 semanas.
+            </p>
+          </div>
+        </div>
+
+        <aside class="right card">
+          <h3>Información nutricional (estimada)</h3>
+          <p>Por porción de 20 g:</p>
+          <ul>
+            <li>Calorías: ~45–60 kcal</li>
+            <li>Carbohidratos: 11–15 g</li>
+            <li>Grasas: 0 g</li>
+            <li>Proteínas: 0.2–0.5 g</li>
+          </ul>
+
+          <h3 style="margin-top: 12px">Variedades</h3>
+          <ul>
+            <li>Miel y limón</li>
+            <li>Con canela y clavo</li>
+            <li>Con jengibre para un toque picante</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section style="margin-top: 18px" class="card">
+        <h3>Contacto y compra</h3>
+        <p>
+          ¿Te interesa probar Melyuca? Contáctanos para pedidos locales y envío.
+          Etiquetas personalizadas para eventos y regalos disponibles.
+        </p>
+        <p style="font-size: 0.95rem; color: #555; margin-top: 8px">
+          Email: <strong>hola@melyuca.ec</strong> &nbsp; | &nbsp; Tel:
+          <strong>+593 9X XXX XXXX</strong>
+        </p>
+      </section>
+
+      <footer>
+        <p>
+          &copy; <strong>Melyuca</strong> — Mermelada de yuca. Hecho con
+          ingredientes naturales y cariño.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
